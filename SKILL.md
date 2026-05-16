@@ -1,12 +1,12 @@
 ---
-name: firmware-config
-description: Standard embedded firmware project configuration, board environments, hardware selectors, build flags, library dependencies, and runtime provisioning. Use when working in firmware repos with PlatformIO structure; editing `platformio.ini`, `hardware/`, config headers, board selectors, version flags, provisioning storage, or local value placeholders.
+name: firmware-repository-opinions
+description: Standard embedded firmware repository opinions for project configuration, board environments, hardware selectors, build flags, library dependencies, and runtime provisioning. Use when working in firmware repos with PlatformIO structure; editing `platformio.ini`, `hardware/`, config headers, board selectors, version flags, provisioning storage, or local value placeholders.
 metadata:
   author: Leeor Nahum
-  version: "1.0.0"
+  version: "2.0.0"
 ---
 
-# Firmware Config
+# Firmware Repository Opinions
 
 Firmware configuration starts with hardware reality: board targets, pins, sensors, build environments, device identity, and runtime provisioning. Keep those layers explicit so the project can build, flash, debug, and ship without hidden coupling.
 
@@ -256,7 +256,7 @@ Device credentials that users or manufacturing flows provide at runtime should l
 
 Provisioning may happen through Wi-Fi captive portal, BLE, serial, a desktop/mobile app, or a manufacturing flow. Use compile-time placeholders only for local development, demos, or bring-up when runtime provisioning does not exist yet.
 
-## Firmware Config Audit
+## Firmware Repository Audit
 
 When invoked:
 
