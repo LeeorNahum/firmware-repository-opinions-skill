@@ -13,11 +13,11 @@ Wrapper example:
 ```text
 src/hardware/display/
   display.h
-  display_ssd1306.cpp
+  display_<driver>.cpp
   display_virtual.cpp
 ```
 
-Use board macros such as `DISPLAY_SSD1306` to select real implementations. Provide virtual implementations when they make bring-up, tests, or partial hardware useful.
+Name each implementation and its selection macro as type then name, the domain followed by the specific part, so a wrapper like `display_<driver>.cpp` is chosen by the board macro `DISPLAY_<DRIVER>`. Provide virtual implementations when they make bring-up, tests, or partial hardware useful.
 
 Helper example:
 

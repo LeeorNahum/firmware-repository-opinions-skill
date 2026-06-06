@@ -11,11 +11,11 @@ static const uint8_t SCL_PIN = 0; // set for your board
 // Interrupts and alerts
 static const uint8_t BUTTON_INT_PIN = 0; // set for your board
 
-// I2C addresses
-static const uint8_t DEVICE_I2C_ADDRESS = 0x00; // set for your device
+// I2C addresses, one per module on the bus
+static const uint8_t MODULE_I2C_ADDRESS = 0x00; // set per module
 
-// Hardware selection macros: define the drivers this board uses
-// #define DISPLAY_DRIVER_NAME
-// #define IMU_DRIVER_NAME
+// Hardware selection macros, named TYPE_NAME: the domain, then the specific part
+// #define DISPLAY_<DRIVER>
+// #define IMU_<DRIVER>
 
 #endif // PROJECT_TARGET_NAME_H

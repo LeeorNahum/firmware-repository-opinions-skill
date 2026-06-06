@@ -3,7 +3,7 @@ name: firmware-repository-opinions
 description: Standard embedded firmware repository opinions for project configuration, board environments, hardware selectors, build flags, library dependencies, and runtime provisioning. Use when working in firmware repos with PlatformIO structure; editing `platformio.ini`, `hardware/`, config headers, board selectors, version flags, provisioning storage, or local value placeholders.
 metadata:
   author: Leeor Nahum
-  version: "3.0.0"
+  version: "3.0.1"
 ---
 
 # Firmware Repository Opinions
