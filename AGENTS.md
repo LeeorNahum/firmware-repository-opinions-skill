@@ -11,7 +11,7 @@ Rules for editing the **firmware-repository-opinions** skill. User-facing opinio
 | `assets/` | Copyable starter configs that drop into a firmware repo |
 | `README.md` | Short human summary |
 
-One owner per opinion. Each reference owns its concept; other files use the term or shape without restating the rule. The reference-loading map lives in `SKILL.md` once.
+One owner per opinion. Each reference owns its concept. Other files use the term or shape without restating the rule. The reference-loading map lives in `SKILL.md` once.
 
 ## Repository-Opinions Skill Layout
 
@@ -19,7 +19,7 @@ This skill follows the shared layout for repository-opinions skills. Keep that s
 
 - `SKILL.md` is a slim spine: a short thesis, a default-stack or default-toolchain table of swappable tool picks, the reference-loading map, the core non-negotiables, the repository audit, and a closing note that risky-change "Ask before" lines live in the references.
 - `references/*.md` hold one concept each, named by paradigm, carrying the detailed opinions. Distribute each "Ask before" guardrail into the reference that owns its topic rather than a standalone section.
-- `assets/` hold copyable starter configs that drop into a target repo. References explain the judgment; assets are the copy-paste artifacts.
+- `assets/` hold copyable starter configs that drop into a target repo. References explain the judgment. Assets are the copy-paste artifacts.
 - `AGENTS.md` is this maintenance contract.
 - `README.md` is the human skim layer.
 
@@ -33,7 +33,7 @@ A repository-opinions skill is opinionated and explicit, names its default tools
 - One opinion per reference. A new paradigm, layer, or workflow gets its own reference file and an entry in the `SKILL.md` reference-loading map. Do not bolt a second unrelated concept onto an existing reference.
 - When an existing concept grows, refactor its reference rather than scattering the idea across several files.
 - **Opinionated and explicit.** State the preference clearly. This skill takes positions.
-- **Paradigm-named, tool-stated.** Name files and sections for the job. PlatformIO is the stated default build system; name other tools as swappable picks.
+- **Paradigm-named, tool-stated.** Name files and sections for the job. PlatformIO is the stated default build system. Name other tools as swappable picks.
 - **No project leakage.** Use placeholder target, device, and project names such as `target_name`. Do not embed a real product's device names or credentials.
 - **No em dashes.** Use commas, periods, parentheses, or "to".
 - **Match depth to scope.** A single-concept reference stays short. Do not pad.

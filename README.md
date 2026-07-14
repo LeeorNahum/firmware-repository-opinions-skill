@@ -16,5 +16,5 @@ It separates project constants, hardware selectors, build versions, runtime prov
 Add as a submodule into your agent's skills directory:
 
 ```bash
-git submodule add https://github.com/LeeorNahum/firmware-repository-opinions-skill.git .agents/skills/firmware-repository-opinions-skill
+git submodule add https://github.com/LeeorNahum/firmware-repository-opinions-skill.git .agents/skills/firmware-repository-opinions
 ```

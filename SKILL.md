@@ -1,16 +1,16 @@
 ---
-name: firmware-repository-opinions
-description: Standard embedded firmware repository opinions for project configuration, board environments, hardware selectors, build flags, library dependencies, and runtime provisioning. Use when working in firmware repos with PlatformIO structure; editing `platformio.ini`, `hardware/`, config headers, board selectors, version flags, provisioning storage, or local value placeholders.
+name: "firmware-repository-opinions"
+description: "Standard embedded firmware repository opinions for project configuration, board environments, hardware selectors, build flags, library dependencies, and runtime provisioning. Use when working in firmware repos with PlatformIO structure; editing `platformio.ini`, `hardware/`, config headers, board selectors, version flags, provisioning storage, or local value placeholders."
 metadata:
-  author: Leeor Nahum
-  version: "3.0.1"
+  author: "Leeor Nahum"
+  version: "3.0.3"
 ---
 
 # Firmware Repository Opinions
 
 Firmware configuration starts with hardware reality: board targets, pins, sensors, build environments, device identity, and runtime provisioning. Keep those layers explicit so the project can build, flash, debug, and ship without hidden coupling.
 
-These are opinionated defaults. The named tools below are swappable defaults; the paradigms around them are not.
+These are opinionated defaults. The named tools below are swappable defaults. The paradigms around them are not.
 
 ## Default Toolchain
 
@@ -40,17 +40,17 @@ Always read every reference relevant to the task before acting on its topic. Bia
 
 ## Core Non-Negotiables
 
-- Firmware starts from hardware reality; keep the layers explicit and never collapse them into one header.
-- `platformio.ini` is the coordinator; concrete build environments live under `hardware/<target>/`, not in the root file.
+- Firmware starts from hardware reality. Keep the layers explicit and never collapse them into one header.
+- `platformio.ini` is the coordinator. Concrete build environments live under `hardware/<target>/`, not in the root file.
 - Create a separate env for any meaningful hardware difference.
 - Keep reusable board and hardware selectors in `hardware/`, not scattered through app logic.
 - Pair each concrete env `.ini` with a same-named hardware `.h`.
 - Use GitHub URLs for all library dependencies; no bare registry names in new work.
 - Always use the spaced `-D FLAG` form.
 - Define firmware semver through build flags, and `#error` when required version flags are missing.
-- Prefer runtime provisioning or NVS for device credentials; use compile-time placeholders only for bring-up.
+- Prefer runtime provisioning or NVS for device credentials. Use compile-time placeholders only for bring-up.
 - Never paste real secrets into chat, docs, screenshots, or commits.
-- `src/main.cpp` is glue; each domain lives behind a small public header, never a flat catch-all folder.
+- `src/main.cpp` is glue. Each domain lives behind a small public header, never a flat catch-all folder.
 
 ## Firmware Repository Audit
 
