@@ -4,7 +4,6 @@
 - Ignore the real local-value file: `hardware/secrets.ini`.
 - Never paste real Wi-Fi passwords, API keys, tokens, or private keys into chat, docs, screenshots, or commits.
 - If real-looking secrets appear in tracked history, stop and recommend rotation before treating the project as clean.
-- Prefer runtime provisioning or NVS storage for device API keys and Wi-Fi credentials when the device flow supports it.
 
 Local value options:
 
@@ -15,7 +14,7 @@ Local value options:
 | `hardware/secrets.ini` build flags | bring-up, demos, temporary bearer tokens | can leak in build logs or generated compile metadata |
 | command-line `-D ...` | CI or one-off non-secret build switches | easy to lose, hard to reproduce, risky for credentials |
 
-Recommendation: runtime provisioning first for shipped device credentials; `hardware/secrets.ini` only for local bring-up or temporary keys; command-line macros for non-secret build switches.
+Recommendation: `hardware/secrets.ini` only for local bring-up or temporary keys, and command-line macros for non-secret build switches.
 
 Default ignore shape:
 

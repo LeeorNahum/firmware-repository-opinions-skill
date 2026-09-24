@@ -1,9 +1,9 @@
 ---
 name: "firmware-repository-opinions"
-description: "Standard embedded firmware repository opinions for project configuration, board environments, hardware selectors, build flags, library dependencies, and runtime provisioning. Use when working in firmware repos with PlatformIO structure; editing `platformio.ini`, `hardware/`, config headers, board selectors, version flags, provisioning storage, or local value placeholders."
+description: "Use when working in firmware repos with PlatformIO structure, or when editing `platformio.ini`, `hardware/`, config headers, board selectors, version flags, provisioning storage, or local value placeholders. Standard embedded firmware repository opinions for project configuration, board environments, hardware selectors, build flags, library dependencies, and runtime provisioning."
 metadata:
   author: "Leeor Nahum"
-  version: "3.0.3"
+  version: "3.1.0"
 ---
 
 # Firmware Repository Opinions
@@ -27,16 +27,17 @@ Prefer these unless the project has a stronger reason not to. Swap the tool, kee
 
 Always read every reference relevant to the task before acting on its topic. Bias toward loading.
 
-- Read `references/layers.md` when separating project constants, hardware selectors, version, provisioning, and local values.
-- Read `references/repo-layout.md` when creating or reorganizing the top-level repo shape.
-- Read `references/environments.md` when configuring `platformio.ini`, build environments, board targets, or upload defaults.
-- Read `references/header-guards.md` when writing include guards for firmware headers.
-- Read `references/source-layout.md` when structuring `src/`, hardware wrappers, helpers, or BLE composition.
-- Read `references/build-flags.md` when setting build flag conventions or placement.
-- Read `references/versioning.md` when defining firmware version flags or bumping versions.
-- Read `references/library-dependencies.md` when adding or pinning library dependencies.
-- Read `references/local-values.md` when handling local injected values, secrets files, or the ignore shape.
-- Read `references/provisioning.md` when storing device credentials provided at runtime.
+- Read [layers.md](references/layers.md) when separating project constants, hardware selectors, version, provisioning, and local values.
+- Read [repo-layout.md](references/repo-layout.md) when creating or reorganizing the top-level repo shape.
+- Read [environments.md](references/environments.md) when configuring `platformio.ini`, build environments, board targets, or upload defaults.
+- Read [header-guards.md](references/header-guards.md) when writing include guards for firmware headers.
+- Read [source-layout.md](references/source-layout.md) when structuring `src/`, hardware wrappers, helpers, or BLE composition.
+- Read [build-flags.md](references/build-flags.md) when setting build flag conventions or placement.
+- Read [versioning.md](references/versioning.md) when defining firmware version flags or bumping versions.
+- Read [library-dependencies.md](references/library-dependencies.md) when adding or pinning library dependencies.
+- Read [local-values.md](references/local-values.md) when handling local injected values, secrets files, or the ignore shape.
+- Read [provisioning.md](references/provisioning.md) when storing device credentials provided at runtime.
+- Copy [assets/platformio.ini](assets/platformio.ini) and a paired [assets/target.ini](assets/target.ini) and [assets/target.h](assets/target.h) when starting a repo or adding a board target, and [assets/secrets.example.ini](assets/secrets.example.ini) when local injected values are needed.
 
 ## Core Non-Negotiables
 
@@ -45,7 +46,7 @@ Always read every reference relevant to the task before acting on its topic. Bia
 - Create a separate env for any meaningful hardware difference.
 - Keep reusable board and hardware selectors in `hardware/`, not scattered through app logic.
 - Pair each concrete env `.ini` with a same-named hardware `.h`.
-- Use GitHub URLs for all library dependencies; no bare registry names in new work.
+- Use GitHub URLs for all library dependencies, never bare registry names in new work.
 - Always use the spaced `-D FLAG` form.
 - Define firmware semver through build flags, and `#error` when required version flags are missing.
 - Prefer runtime provisioning or NVS for device credentials. Use compile-time placeholders only for bring-up.
@@ -61,6 +62,6 @@ When invoked:
 3. Confirm real local-value files are ignored and examples exist when needed.
 4. Check for hardcoded credentials, board assumptions, or service endpoints that should be configurable.
 5. Verify board environments, library dependency refs, and build flags are documented.
-6. Report risks by key/file category, never by secret value.
+6. Report risks as a Markdown table of category, file, and risk, never by secret value.
 
 Several references end with an "Ask before" line for their riskiest changes, such as pin maps, upload targets, provisioning, device keys, and bootloader behavior. Honor those where the topic lives.

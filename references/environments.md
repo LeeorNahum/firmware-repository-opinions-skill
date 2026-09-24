@@ -13,7 +13,7 @@
 
 See `assets/platformio.ini` for the coordinator pattern, and `assets/target.ini` paired with `assets/target.h` for a board target and its hardware header.
 
-Name the env and folder after the hardware target. Create a separate env for any meaningful hardware difference. If two targets are nearly identical, one env can inherit from the other's sections rather than duplicating build flags and lib deps.
+Name the env and folder after the hardware target. If two targets are nearly identical, one env can inherit from the other's sections rather than duplicating build flags and lib deps.
 
 Add suffixes only when the split exists, e.g. `target_name_dev`, `target_name_prod`, `target_name_debug`.
 
